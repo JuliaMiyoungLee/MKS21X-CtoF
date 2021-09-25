@@ -24,14 +24,14 @@ public class CtoFTester {
     System.out.println("How many degrees is it?");
     degrees = d.nextDouble();
     d.nextLine();
-    int unit;
+    String unit;
     Scanner u = new Scanner(System.in);
-    System.out.println("What are the units? Type 1 for Farenheit or 2 for Celcius.");
-    unit = u.nextInt();
-    if (unit == 2) {
+    System.out.println("What are the units? Type F or C.");
+    unit = u.nextLine();
+    if (unit.equals("C")) {
       double converted = celsiusToFahrenheit(degrees);
       System.out.printf("%.1f C = %.1f F", degrees, converted);
-    } else if (unit == 1) {
+    } else if (unit.equals("F")) {
       double converted = fahrenheitToCelsius(degrees);
       System.out.printf("%.1f F = %.1f C", degrees, converted);
     }
